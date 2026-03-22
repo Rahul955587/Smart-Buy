@@ -1,6 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
+
+// serve static files
+app.use(express.static(path.join(__dirname, "public")));
 
 const app = express();
 app.use(cors());
@@ -34,7 +38,9 @@ function extractProductId(url) {
     return null;
   }
 }
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 // API
 app.post("/analyze", async (req, res) => {
   const { url } = req.body;
@@ -83,4 +89,9 @@ app.post("/analyze", async (req, res) => {
   });
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// app.listen(5000, () => console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
