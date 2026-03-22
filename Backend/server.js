@@ -4,12 +4,13 @@ const cors = require("cors");
 const path = require("path");
 
 // serve static files
-app.use(express.static(path.join(__dirname, "public")));
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, "public")));
 // MongoDB connect
 mongoose.connect(
   "mongodb+srv://rahul:Rahul123@backend.owxdm1h.mongodb.net/SmartBuy",
