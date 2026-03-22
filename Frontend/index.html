@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Buy Assistant</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar-trigger"></div>
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <i class="fas fa-store"></i>
+        Dashboard
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><i class="fas fa-home"></i> Home</li>
+        <li><i class="fas fa-chart-line"></i> Analytics</li>
+        <li><i class="fas fa-box"></i> Products</li>
+        <li><i class="fas fa-user"></i> Profile</li>
+    </ul>
+</aside>
+
+<header class="header">
+    <div class="logo">
+        <i class="fas fa-chart-line"></i>
+        Smart Buy Assistant
+    </div>
+
+    <div class="header-actions">
+        <button class="btn" onclick="toggleTheme()" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <button class="btn btn-primary" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+            AI Assistant
+        </button>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="hero-section">
+        <h1 class="hero-title">AI-Powered E-commerce Analytics</h1>
+    </div>
+
+    <div class="search-container">
+        <!-- <input 
+            type="text" 
+            class="search-input" 
+            placeholder="Paste the link of any product to view its prices at different platforms..."> -->
+          <input 
+    type="text" 
+    id="url"
+    class="search-input" 
+    placeholder="Paste Flipkart product link...">
+        <button class="search-btn" class="search-btn" onclick="analyze()">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <!-- <div id="resultBox" class="result-box"></div>
+
+<canvas id="chart"></canvas> -->
+<div class="analysis-container">
+
+  <!-- LEFT SIDE (INFO BOXES) -->
+  <div class="info-section" id="resultBox"></div>
+
+  <!-- RIGHT SIDE (CHART) -->
+  <div class="chart-section">
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div class="feature-title">Real-time Analysis</div>
+            <div class="feature-desc">Get live competitor data instantly</div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-search-dollar"></i></div>
+            <div class="feature-title">Product Research</div>
+            <div class="feature-desc">Discover trending products</div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+            <div class="feature-title">Sales Estimates</div>
+            <div class="feature-desc">Accurate revenue predictions</div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+            <div class="feature-title">Growth Strategies</div>
+            <div class="feature-desc">AI-powered recommendations</div>
+        </div>
+
+    </div>
+</main>
+
+<canvas id="chart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Buy Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📊 Smart Buy Assistant</h1>
+
+<input id="url" placeholder="Paste product link">
+<button onclick="analyze()">Analyze</button>
+
+<div id="result"></div>
+
+<canvas id="chart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html> -->

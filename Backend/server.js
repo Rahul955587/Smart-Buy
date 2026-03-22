@@ -11,7 +11,7 @@ mongoose.connect(
   "mongodb+srv://rahul:Rahul123@backend.owxdm1h.mongodb.net/SmartBuy",
 );
 
-// Schema
+// Schema .
 const productSchema = new mongoose.Schema({
   productId: String,
   name: String,
