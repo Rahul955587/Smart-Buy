@@ -12,9 +12,12 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 // MongoDB connect
-mongoose.connect(
-  "mongodb+srv://rahul:Rahul123@backend.owxdm1h.mongodb.net/SmartBuy",
-);
+mongoose
+  .connect(
+    "mongodb+srv://rahul955587_db_user:Rahul9555@cluster0.2vxeohm.mongodb.net/SmartBuy",
+  )
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err.message));
 
 // Schema .
 const productSchema = new mongoose.Schema({
